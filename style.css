@@ -1,0 +1,106 @@
+.header{
+   display: flex;  
+   justify-content: space-between;
+   border-style: groove;
+   border-color: black;
+   border-width: 1px;
+   height: 125px;
+
+
+   
+}
+.navitems > ul{
+  display: flex;
+ 
+}
+
+.navitems > ul >li{
+  margin: 35px;
+  font-size: 22px;
+  list-style: none;
+}
+
+.logo{ 
+    width: 120px;
+    height: 125px;
+    position: absolute;
+    left: 1rem;   
+} 
+.restcard{
+
+ width: 200px;
+ background-color: rgba(105, 105, 105, 0.63);
+ text-align: center;
+ padding: 10px;
+ margin: 10px;
+  
+} 
+
+.restcard:hover{
+  border: 1px solid black;
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  transition-duration: 1.2s;
+} 
+
+.search{
+  padding: 30px;
+  
+}
+
+ .meghana{
+ width: 100%;
+ height: 150px;
+} 
+
+ .rest-container{
+display: flex;
+flex-wrap: wrap;
+margin-inline: 65px;
+
+}
+.top-rated-restro{
+  padding: 3px;
+  cursor: pointer;
+
+}
+.btn{
+  margin-top: 10px;
+}
+
+
+.shimmer-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: 65px;
+}
+
+.shimmer-cards{
+  width: 200px;
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  height: 400px;
+   margin-top: 50px;
+}
+
+.bttn{
+  width: 70px;
+  height: 40px;
+  margin-right: 20px;
+  margin-top: 27px;
+  cursor: pointer;
+  background-color: rgba(52, 126, 236, 0.822);
+  border-radius: 10%;
+  color: white;
+  
+}
+.filter{
+  display: flex;
+  
+}
+.search{
+  padding: 12px;
+ 
+}
