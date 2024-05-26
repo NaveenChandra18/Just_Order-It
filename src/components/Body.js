@@ -1,7 +1,8 @@
 import Restcard from "./Restcard";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
-
+import { Link } from "react-router-dom";
+import useOnlinestatus from "../utils/useOnlinestatus";
 
 const Body = () =>{
 
@@ -10,8 +11,9 @@ const [listofrestro , setListofrestro]=useState([]);  //for restaurants card
 
 const [filtersearch , setfiltersearch]=useState([]);  
 
-const [searchtext , setsearchtext]=useState("") //for search display
+const [searchtext , setsearchtext]=useState(""); //for search display
 
+     
 
 
 useEffect(() => {
@@ -25,17 +27,21 @@ const fetchdata = async()=>
  const datafetch = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999");
  
  const json = await datafetch.json();
- 
+
+ setListofrestro(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+ setfiltersearch(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+
  console.log(json);
-
- setListofrestro(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants)
- setfiltersearch(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants)
-
-
 };
 
+const onlinestatus = useOnlinestatus();
 
+if (onlinestatus==false)
+  return(
 
+<h1>oops! something went wrong.looks like you are offline</h1>
+
+);
 return listofrestro.length==0?(
   <Shimmer />
 
@@ -93,13 +99,14 @@ return listofrestro.length==0?(
          {
   
             filtersearch.map((restaurant) => (
-           <Restcard key ={restaurant.info.id} restData={restaurant}/>
+      <Link key ={restaurant.info.id} to={"/restroinfo/"+restaurant.info.id}> <Restcard restData={restaurant}/></Link>
          
-         ))};
+         ))}
   
        </div>
     </div>
 );
-};       
+};  
+
 
   export default Body;
