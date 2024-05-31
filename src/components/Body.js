@@ -1,4 +1,4 @@
-import Restcard from "./Restcard";
+import Restcard ,{ WithPromotedLabel} from "./Restcard";
 import { useEffect, useState } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ const [filtersearch , setfiltersearch]=useState([]);
 
 const [searchtext , setsearchtext]=useState(""); //for search display
 
-     
+     const Restropromoted = WithPromotedLabel(Restcard)
 
 
 useEffect(() => {
@@ -32,6 +32,7 @@ const fetchdata = async()=>
  setfiltersearch(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
 
  console.log(json);
+ console.log(listofrestro);
 };
 
 const onlinestatus = useOnlinestatus();
@@ -99,7 +100,16 @@ return listofrestro.length==0?(
          {
   
             filtersearch.map((restaurant) => (
-      <Link key ={restaurant.info.id} to={"/restroinfo/"+restaurant.info.id}> <Restcard restData={restaurant}/></Link>
+      <Link 
+      key ={restaurant.info.id} to={"/restroinfo/"+ restaurant.info.id}> 
+
+
+       {restaurant.info.promoted ?(
+        <Restropromoted restData={restaurant}/>
+       ):(
+      <Restcard restData={restaurant}/>
+       )}
+      </Link>
          
          ))}
   
