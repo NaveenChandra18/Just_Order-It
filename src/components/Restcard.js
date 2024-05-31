@@ -18,12 +18,12 @@ const Restcard= (props) => {
   
   
       return(
-      <div className="restcard">
+      <div className="m-4  p-5 w-[230px] rounded-lg bg-slate-200 text-center h-[500px] shadow-lg hover:bg-slate-300 transition transform ease-in-out duration-500  hover:scale-105">
         <img 
-        className="meghana" 
+        className="rounded-lg w-[200px] h-[200px] " 
       alt="restro" 
       src={CDN_URL+ cloudinaryImageId}/>
-        <h3>{name}</h3>
+        <h3 className="font-bold py-4 text-lg">{name}</h3>
         <h4>{cuisines.join(", ")}</h4>
         <h4>{avgRating} stars</h4>
         <h4>{deliveryTime} minutes</h4>

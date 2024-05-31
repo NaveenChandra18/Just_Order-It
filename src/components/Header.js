@@ -11,21 +11,21 @@ const [btnnameReact , setbtnnameReact] = useState("login");
 const onlinestatus = useOnlinestatus();
 
    return (
-    <div className="header">
+    <div className="flex justify-between shadow-lg bg-slate-50  ">
         <div className="logocontainer">
-           <img className="logo" src={LOGO_URL}></img>
+           <img className="w-[150]" src={LOGO_URL}></img>
         </div>
   
-        <div className="navitems">
-             <ul>
-                <li>Online status:{onlinestatus ? "🟢" : "🔴"}</li>
-                <li><Link to="/">Home</Link></li>
-                <li><Link  to="/about">About</Link></li>
-                <li><Link  to="/contact">Contact Us</Link></li>
-                <li><Link  to="/grocery">Grocery</Link></li>
-                <li>Cart</li>
+        <div className="flex items-center text-lg">
+             <ul className="flex px-4 ">
+                <li className="px-6 ">Online status:{onlinestatus ? "🟢" : "🔴"}</li>
+                <li className="px-6 "><Link to="/">🏘Home</Link></li>
+                <li className="px-6 "><Link  to="/about">📋About Us</Link></li>
+                <li className="px-6 "><Link  to="/contact">📞Contact Us</Link></li>
+                <li className="px-6 "><Link  to="/grocery">🥦Grocery</Link></li>
+                <li className="px-6 ">🛒Cart</li>
                 <button
-                 className="bttn"
+                 className="bg-blue-500 text-white px-5 ml-8 py-1 rounded-md " 
                  onClick={()=>{
                   btnnameReact=="login"
                   

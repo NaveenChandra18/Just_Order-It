@@ -49,10 +49,10 @@ return listofrestro.length==0?(
 
 (
     <div className="body">
-      <div className="filter">
-       <div className="search">
+      <div className="flex mt-8   m-2 ">
+       <div>
          <input type="text"
-           className="search-box"
+          className="ml-4 border border-black "
            value={searchtext}
            onChange={(e)=>{
              setsearchtext(e.target.value)
@@ -61,7 +61,7 @@ return listofrestro.length==0?(
            
         />
 
-        <button 
+        <button  className= "bg-blue-500 text-white px-2 ml-2 mr-5 py-0.5 rounded-md   "
         onClick={()=>{
           
           // filter the restaurant card
@@ -76,7 +76,7 @@ return listofrestro.length==0?(
       </div>
 
 
-        <div className="btn">
+        <div className="bg-green-300 px-1 ml-5  rounded-md border border-black">
         <button className="top-rated-restro"
         onClick={()=>{
          
@@ -87,14 +87,14 @@ return listofrestro.length==0?(
           setfiltersearch(filterlist);
         }}>
           
-          top rated restaurant</button>
+         ⭐ top rated restaurant</button>
        </div>
        </div>
 
 
 
 
-       <div className="rest-container">
+       <div className="flex flex-wrap">
   
          {
   
