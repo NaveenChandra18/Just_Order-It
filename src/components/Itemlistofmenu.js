@@ -5,7 +5,7 @@ const Itemlistofmenu =({items})=>{
     console.log(items)
     return(
         <div>
-          
+          a
           {items.map((item)=>(
             <div key={item.card.info.id} className=" w-[730px] shadow-lg m-6 p-4 h-[300px] bg-slate-200 text-left flex justify-between">
                 
