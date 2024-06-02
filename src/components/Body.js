@@ -28,11 +28,13 @@ const fetchdata = async()=>
  
  const json = await datafetch.json();
 
- setListofrestro(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
- setfiltersearch(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-
  console.log(json);
- console.log(listofrestro);
+
+ setListofrestro(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+ setfiltersearch(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+
+
+ 
 };
 
 const onlinestatus = useOnlinestatus();
@@ -64,6 +66,8 @@ return listofrestro.length==0?(
 
         <button  className= "bg-blue-500 text-white px-2 ml-2 mr-5 py-0.5 rounded-md   "
         onClick={()=>{
+
+          
           
           // filter the restaurant card
           const filterfind= listofrestro.filter(

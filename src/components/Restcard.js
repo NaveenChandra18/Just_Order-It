@@ -18,7 +18,7 @@ const Restcard= (props) => {
   
   
       return(
-      <div className=" relative m-4  p-5 w-[230px] rounded-lg bg-slate-200 text-center h-[500px] shadow-lg hover:bg-slate-300 transition transform ease-in-out duration-500  hover:scale-105">
+      <div className="  m-4  p-5 w-[230px] rounded-lg bg-white text-center h-[500px] shadow-lg hover:bg-slate-300 ">
         <img 
         className=" rounded-lg w-[200px] h-[200px] " 
       alt="restro" 
@@ -42,8 +42,8 @@ const Restcard= (props) => {
   export const WithPromotedLabel = (Restcard)=>{
     return(props)=>{
       return(
-        <div className="relative">
-          <label className="absolute bg-black text-white p-1 rounded-lg " >Promoted</label>
+        <div >
+          <label className="absolute bg-black  text-white p-1 rounded-lg " >Promoted</label>
           <Restcard {...props}/>
         </div>
       );
