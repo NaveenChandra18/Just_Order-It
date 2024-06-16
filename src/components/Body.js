@@ -1,8 +1,10 @@
 import Restcard ,{ WithPromotedLabel} from "./Restcard";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlinestatus from "../utils/useOnlinestatus";
+import Usercontext from "../utils/Usercontext";
+
 
 const Body = () =>{
 
@@ -14,6 +16,8 @@ const [filtersearch , setfiltersearch]=useState([]);
 const [searchtext , setsearchtext]=useState(""); //for search display
 
      const Restropromoted = WithPromotedLabel(Restcard)
+     
+     const{loggedInUser,setuserName}=useContext(Usercontext)
 
 
 useEffect(() => {
@@ -94,11 +98,17 @@ return listofrestro.length==0?(
           
          ⭐ top rated restaurant</button>
        </div>
+
+
+       <label className="ml-14">username:</label>
+        <input className="border border-black ml-3"
+        value={loggedInUser}
+        onChange={(e)=>setuserName(e.target.value)}></input>
+
        </div>
 
 
-
-
+       
        <div className="flex flex-wrap">
   
          {

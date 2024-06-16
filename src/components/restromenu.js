@@ -45,7 +45,7 @@ const categories = resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
      
       {/* categories accordion */}
 
-      {categories.map((category)=>(<Restrocategory key={category?.card?.card?.name} data={category?.card?.card} />))}
+      {categories.map((category,index)=>(<Restrocategory key={category.card.card?.id || index} data={category?.card?.card} />))}
 
       </div>
     )

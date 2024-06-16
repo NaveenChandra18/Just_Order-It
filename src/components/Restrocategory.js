@@ -2,14 +2,14 @@ import Itemlistofmenu from "./Itemlistofmenu"
 import { useState } from "react"
 
 const Restrocategory = (data) => {
-console.log(data)
+// console.log(data)
 
 const [showItems,setshowItems]=useState(false);
 
 const HandleClick=()=>{
   // setshowItems(true); //to make show items true which will show all items
 
-  setshowItems(!showItems); // toggle feature-- if my shoitem is true make it false and if it is false make it true
+  setshowItems(!showItems); // toggle feature-- if my show item is true make it false and if it is false make it true
 };
 
   return (

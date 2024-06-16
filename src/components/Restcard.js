@@ -1,5 +1,6 @@
 import { CDN_URL } from "../utils/constants";
-
+import { useContext } from "react";
+import Usercontext from "../utils/Usercontext";
 
 const Restcard= (props) => {
     const {restData} = props;
@@ -16,6 +17,8 @@ const Restcard= (props) => {
       deliveryTime,
     } = restData?.info.sla;
   
+
+    const {loggedInUser}= useContext(Usercontext);
   
       return(
       <div className="  m-4  p-5 w-[230px] rounded-lg bg-white text-center h-[500px] shadow-lg hover:bg-slate-300 ">
@@ -28,6 +31,7 @@ const Restcard= (props) => {
         <h4>{avgRating} stars</h4>
         <h4>{deliveryTime} minutes</h4>
         <h4>{costForTwo}</h4>
+        <h4 className="font-bold">{loggedInUser}</h4>
   
         
       </div>

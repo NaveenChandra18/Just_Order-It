@@ -1,8 +1,9 @@
-import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useContext, useState, } from "react";
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
+import { LOGO_URL } from "../utils/constants";
 import useOnlinestatus from "../utils/useOnlinestatus";
-
+import Usercontext from "../utils/Usercontext";
 
 const Header = () => {
 
@@ -10,7 +11,14 @@ const [btnnameReact , setbtnnameReact] = useState("login");
 
 const onlinestatus = useOnlinestatus();
 
-   return (
+const {loggedInUser}= useContext(Usercontext);
+
+const cartItems=useSelector((store)=>store.cart.items) //subscribe to our store
+
+console.log(cartItems)
+
+
+   return(
     <div className="flex justify-between shadow-lg bg-slate-50  ">
         <div className="logocontainer">
            <img className="w-[150]" src={LOGO_URL}></img>
@@ -23,7 +31,8 @@ const onlinestatus = useOnlinestatus();
                 <li className="px-6 "><Link  to="/about">📋About Us</Link></li>
                 <li className="px-6 "><Link  to="/contact">📞Contact Us</Link></li>
                 <li className="px-6 "><Link  to="/grocery">🥦Grocery</Link></li>
-                <li className="px-6 ">🛒Cart</li>
+                <li className="px-6 "><Link to="/cart">🛒Cart-({cartItems.length})</Link></li>
+                
                 <button
                  className="bg-blue-500 text-white px-5 ml-8 py-1 rounded-md " 
                  onClick={()=>{
@@ -36,6 +45,8 @@ const onlinestatus = useOnlinestatus();
                  }}>
                   {btnnameReact}
                  </button>
+
+                 <li className="font-bold">{loggedInUser}</li>
                  
              </ul>
              
