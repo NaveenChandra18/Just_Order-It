@@ -40,7 +40,7 @@ const categories = resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
       <div className="text-center my-6">
 
         <h1 className=" text-2xl font-bold py-2">{name}</h1>
-        <h4 className="font-bold text-lg font-thin">{cuisines.join(", ")}</h4>
+        <h4 className="font-bold text-lg">{cuisines.join(", ")}</h4>
         <p className="text-md font-bold">{avgRating}⭐  -  {costForTwoMessage}</p>
      
       {/* categories accordion */}

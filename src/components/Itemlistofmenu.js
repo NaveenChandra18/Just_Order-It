@@ -11,7 +11,7 @@ const handleclick=(item)=>{
    //we will dispatch an action
    dispatch(Additem(item))
 
-}
+};
     return(
         <div>
           

@@ -15,7 +15,7 @@ const {loggedInUser}= useContext(Usercontext);
 
 const cartItems=useSelector((store)=>store.cart.items) //subscribe to our store
 
-console.log(cartItems)
+
 
 
    return(

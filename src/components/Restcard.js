@@ -21,7 +21,7 @@ const Restcard= (props) => {
     const {loggedInUser}= useContext(Usercontext);
   
       return(
-      <div className="  m-4  p-5 w-[230px] rounded-lg bg-white text-center h-[500px] shadow-lg hover:bg-slate-300 ">
+      <div className="  m-4  p-5 w-[230px] rounded-lg bg-white text-center h-[500px] shadow-lg hover:bg-slate-300 ml-5">
         <img 
         className=" rounded-lg w-[200px] h-[200px] " 
       alt="restro" 
